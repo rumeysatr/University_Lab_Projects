@@ -1,0 +1,70 @@
+@model List<Book>
+
+<body>
+
+<section class="search-form">
+    <form asp-action="SearchByName" asp-controller="Library" method="get">
+        <input type="text" class="box" name="name" placeholder="search by name" maxlength="150">
+        <button type="submit" class="fas fa-search" name="search_btn"></button>
+    </form>
+@*         @if (Model != null && Model.Any())
+        {
+            <h2>Search Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var book in Model)
+                    {
+                        <tr>
+                            <td>@book.Name</td>
+                            <td>@book.Author</td>
+                            <td>@book.Year</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else if (Model == null)
+        {
+            <p>No books found.</p>
+        } *@
+</section>
+
+<section class="search-form">
+    <form asp-action="SearchByAuthor" asp-controller="Library" method="get">
+        <input type="text" class="box" name="author" placeholder="search by author" maxlength="100">
+        <button type="submit" class="fas fa-search" name="search_btn"></button>
+    </form>
+
+</section>
+
+    <section class="products" style="padding-top: 0; min-height: 100vh;">
+        @if (Model != null && Model.Any())
+        {
+            <h2>Search Results</h2>
+            <div class="box-container">
+                @foreach (var book in Model)
+                {
+                    <form method="post" class="box">
+                        <img src="~/images/i.png" alt="@book.Name" />
+                        <a>@book.Year</a>
+                        <div class="name"><b>@book.Name</b><br />@book.Author</div>
+                        <div class="flex"></div>
+                    </form>
+                }
+            </div>
+        }
+        else
+        {
+            <p>No books found.</p>
+        }
+
+    </section>
+
+</body>

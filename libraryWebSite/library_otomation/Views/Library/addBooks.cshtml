@@ -1,0 +1,52 @@
+<body>
+
+<section class="form-container">
+
+        <form asp-action="Add" asp-controller="Library" method="post" enctype="multipart/form-data">
+            <h3>ADD BOOK</h3>
+            <input type="text" required maxlength="250" name="name" placeholder="Enter book name" class="box">
+            <input type="text" required maxlength="50" name="author" placeholder="Enter author name" class="box">
+            <input type="number" required min="0" max="2024" name="year" placeholder="Enter publish date" class="box">
+            <input type="submit" value="ADD BOOK" class="btn" name="submit">
+        </form>
+        @if (TempData["Message"] != null)
+        {
+            <p class="success-message">@TempData["Message"]</p>
+        }
+</section>
+
+<footer class="footer">
+
+    <section class="box-container">
+
+        <div class="box">
+            <img src="~/images/email-icon.png" alt="">
+            <h3>our email</h3>
+            <a href="mailto:240501040@kocaelisaglik.edu.tr">240501040@kocaelisaglik.edu.tr</a>
+            <a href="mailto:240501037@kocaelisaglik.edu.tr">240501037@kocaelisaglik.edu.tr</a>
+        </div>
+
+        <div class="box">
+            <img src="~/images/clock-icon.png" alt="">
+            <h3>opening hours</h3>
+            <p>24 hours, 7 days</p>
+        </div>
+
+        <div class="box">
+            <img src="~/images/map-icon.png" alt="">
+            <h3>our address</h3>
+            <a href="https://www.google.com/maps">Kocaeli, Türkiye - 400104</a>
+        </div>
+
+        <div class="box">
+            <img src="~/images/phone-icon.png" alt="">
+            <h3>our number</h3>
+            <a href="">+90-222-2222</a>
+            <a href="">+90-222-2220</a>
+        </div>
+
+    </section>
+</footer>
+
+
+</body>

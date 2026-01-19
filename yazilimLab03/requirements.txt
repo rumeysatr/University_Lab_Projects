@@ -1,0 +1,30 @@
+# Sınav Sistemi - Bağımlılıklar
+
+# Veritabanı
+psycopg[binary]>=3.2.0
+
+# Excel işlemleri
+openpyxl==3.1.5
+xlrd==2.0.1
+
+# PDF oluşturma
+reportlab==4.0.7
+
+# Güvenlik - Şifre hashing
+bcrypt==4.1.2
+
+# Ortam değişkenleri
+python-dotenv==1.0.0
+
+# Veri işleme (isteğe bağlı) - Python 3.13 ile uyumluluk sorunu
+# pandas==2.1.3
+
+# Test
+pytest==7.4.3
+
+# Web framework (varsa)
+# flask==3.0.0
+# django==4.2.8
+
+# ORM (varsa)
+# sqlalchemy==2.0.23

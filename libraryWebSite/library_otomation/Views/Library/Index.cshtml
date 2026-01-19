@@ -1,0 +1,120 @@
+﻿@using library_otomation.Models
+@model List<Book>
+
+@{
+    ViewData["Title"] = "Library - Book Management";
+}
+
+<div class="heading">
+    <h3>WELCOME</h3>
+</div>
+<section class="about">
+
+    <div class="row">
+
+        <div class="image">
+            <img src="~/images/ai_lib.jpg" alt="">
+        </div>
+
+        <div class="content">
+            <br><br>
+            <p>Kültür; okumak, anlamak, görebilmek, görebildiğinden mana çıkarmak, uyanık davranmak, düşünmek, zekayı terbiye etmektir.</p>
+            <br><h3>M. Kemal ATATÜRK</h3>
+
+            <a asp-controller="Library" asp-action="listBooks" class="btn">List All Books</a>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="home">
+
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>Premchand S. Nair - July 27, 2017</span>
+                    <h3>JAVA programming Fundamentals</h3>
+                </div>
+                <div class="image">
+                    <img src="images/java img.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>Justin Hickey - July 29, 2021</span>
+                    <h3>Learning The C++ Programming Language</h3>
+                </div>
+                <div class="image">
+                    <img src="images/c++ img.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    <span>Anthony Brun - May 20, 2018</span>
+                    <h3>Python Programming a step by step guide from beginner to expert</h3>
+                </div>
+                <div class="image">
+                    <img src="~/images/python img.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section>
+@* 
+    @if (Model != null && Model.Any())
+    {
+        @foreach (var book in Model)
+        {
+            <div class="latest-col">
+                @* <div class="limg">
+                    <img src="@book.ImagePath" alt="@book.Title" />
+                </div> *@
+@*                 <div class="info">
+                    <h3>@book.Name</h3>
+                    <p><b>Author:</b> @book.Author</p>
+                    <p><b>Published:</b> @book.Year</p>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No books found.</p>
+    } *@
+
+@* <div class="loader">
+    <img src="images/books.gif" alt="">
+</div> *@
+
+@section Scripts
+{
+    
+
+<script>
+
+var swiper = new Swiper(".home-slider", {
+   loop:true,
+   grabCursor:true,
+   effect: "flip",
+   pagination: {
+      el: ".swiper-pagination",
+      clickable:true,
+   },
+});
+
+</script>
+}
+
+
+
